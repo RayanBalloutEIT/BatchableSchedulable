@@ -24,9 +24,7 @@ AsyncApexJob job = [SELECT Id, Status, JobItemsProcessed, TotalJobItems, NumberO
 
 An example of the syntax used in order to execute a schedulable class inside of an execute anonymous.
 ```apex
-MyScheduable sched = new MyScheduable();
-String cronExp = '0 0 0 1/1 * ? *';
-String jobID = System.schedule('Scheduled Job', cronExp, sched);
+MyScheduable sched = MyScheduable.scheduleMe();
 ```
 
 After executing the Expression you can enter 'Scheduled Jobs' inside the Setup and see the name of the job as well as its next scheduled run.

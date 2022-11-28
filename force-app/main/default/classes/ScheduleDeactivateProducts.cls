@@ -5,4 +5,10 @@ public with sharing class ScheduleDeactivateProducts implements Schedulable{
         DeactivateInactiveProducts myBatch = new DeactivateInactiveProducts();
         Database.executeBatch(myBatch);
     }
+
+    public static void scheduleMe(){
+        ScheduleDeactivateProducts sched = new ScheduleDeactivateProducts();
+        String cronExp = '0 0 0 1/1 * ? *';
+        String jobID = System.schedule('Scheduled Job', cronExp, sched);
+    }
 }
