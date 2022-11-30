@@ -3,7 +3,7 @@ public with sharing class DeactivateInactiveProductsIterable implements Database
     List<Product2> productList;
     Integer recordsProcessed;
 
-    public DeactivateInactiveProductsIterable(List<Product2> Product2) {
+    public DeactivateInactiveProductsIterable(List<Product2> productList) {
         // Assign the value coming from the constructor to the global value
         this.productList = productList;
         this.recordsProcessed = 0;

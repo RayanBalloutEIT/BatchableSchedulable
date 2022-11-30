@@ -2,7 +2,7 @@ public with sharing class DeactivateInactiveProducts implements Database.Batchab
     public Database.QueryLocator start(Database.BatchableContext bc) {
 
         // collect the batches of records or objects to be passed to execute
-        return DataBase.getQueryLocator('SELECT IsActive FROM Product2 WHERE LastModifiedDate < YESTERDAY');
+        return DataBase.getQueryLocator('SELECT IsActive FROM Product2 WHERE LastModifiedDate > YESTERDAY');
 
     }
     public void execute(Database.BatchableContext bc, List<Product2> records){
